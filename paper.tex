@@ -420,6 +420,30 @@
 		\end{center}
 
 
+		\section{The disk storage space estimation}
+		Now for the JUNO DAQ(Data Acquisition), we have several promising schemes. 
+		If the electronic system can do zero suppression, we can just
+		save the fired PMT's output information.
+		For the normal
+		events we assume the average fired PMT number is 1000, the sampling time window 
+		is 1 $\mu$s. Each sampling point will occupy 2 bytes disk storage space, so each
+		normal event need about 2MByes disk storage space. For the muon events, all the 
+		PMTs will be fired. We assume the total PMT number of the central detector is about 
+		17746, so each muon event need about 36MBytes.
+		
+		If we can do the waveform compression, we can shorten the sampling time window from
+		1 $\mu$s to 50ns. So each normal event need about 0.1MBytes disk storage space, 
+		each muon event need about 1.8MBytes.
+
+		If the electronic system can't do zero suppression, we need save all the PMT's output.
+		If the sampling time window is 1 $\mu$s, each event will need 36MBytes disk storage space. 
+		If we can do 
+		waveform compression to shorten the sampling time window from 1 $\mu$s to 50ns, each event
+		will need about 1.8MBytes.
+
+
+
+
 
 		\section{The event rate estimation of water pool}
 
