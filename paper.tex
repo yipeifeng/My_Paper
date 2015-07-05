@@ -79,7 +79,7 @@
 
 		The experiment hall is expected to be finished at 2019. 
 		It is possible to get data from the experiment at 2020.
-	 	The JUNO event rate is very important for JUNO experiment 
+		The JUNO event rate is very important for JUNO experiment 
 		design. So we want to estimate JUNO
 		event rate by theory and Geant4 simulation. The
 		JUNO event rate is composed of signal rate and background
@@ -96,7 +96,7 @@
 		to estimate JUNO event rate.
 
 
-		
+
 		%For the backgrounds such as natural radioactivity background(U, Th, K), cosmic muons, the event rate of JUNO is possibly large.  
 
 
@@ -129,7 +129,7 @@
 		The thickness of the acrylic tank is 12 cm. Between the 
 		acrylic sphere and the truss, there are many PMTs carried 
 		inward facing to the truss to detect the optical signal from LS.
-   		Ultrapure water is filled in as shielding liquid outside of the    		
+		Ultrapure water is filled in as shielding liquid outside of the    		
 		acrylics tank.	
 
 
@@ -143,7 +143,7 @@
 		The event rate we discussed is singles rate that signals from
 		particles depositing visible energy greater than trigger 
 		system's energy threshold in LS.
-		
+
 
 		Although JUNO is a multi-purpose neutrino experiment.The main 
 		physics
@@ -152,7 +152,7 @@
 		from the Yangjiang and Taishan Nuclear Power Plants. So we 
 		consider the reactor neutrinos as the main source of signal event.
 
-		
+
 		The reactor electron antineutrino interacts with proton via 
 		the inverse $\beta$-decay(IBD) reaction in the liquid 
 		scintillator, and releases a positron and a neutron. 
@@ -164,7 +164,7 @@
 		signal. The coincidence of prompt-delayed signals provides a 
 		distinctive antineutrino signature. The estimated IBD reaction 
 		rate is about 40/day\cite{lab2}. 
-		
+
 		The signals is a small part of event source. The most of
 		the event source is background.The background is composed of
 		the radioactivity in detector materials and detector 
@@ -192,7 +192,7 @@
 
 		\subsection{Natural radioactivity estimation}
 		Natural radioactivity exists in the materials of central 
-		detector.
+		detector and the rock around the water pool.
 		The materials of central detector in the acrylic option mainly
 		include LS, acrylic, oxygen-free copper, stainless steel, as
 		well as the glass of PMT.
@@ -211,7 +211,7 @@
 		\begin{tabular*}{170mm}{@{\extracolsep{\fill}} c c c c c c c c}
 			\toprule  Singles Rate(Hz)&LS &Glass &Acrylic  &Steel &Copper &Rn &Sum \\
 			\hline
-			E$>$0.7MeV &2.39   &2.43  &69.23  &0.89  &0.82 &17.31   &93.07  \\
+			E$>$0.7MeV &2.39   &2.43  &69.23  &0.89  &0.82 &15.94   &91.7  \\
 			E$>$0.6MeV &4.26   &2.66  &75.26  &0.95  &0.94 &19.79   &103.86 \\
 			E$>$0.5MeV &12.06  &2.83  &81.49  &0.98  &1.06 &23.36   &121.78 \\
 			E$>$0.4MeV &13.86  &3.24  &87.84  &1.22  &1.29 &26.11   &133.56 \\
@@ -301,7 +301,7 @@
 		, low energy threshold is very important. When the energy threshold is decreased,
 		the background rate of radioactivity and dark noise will be increased. 
 		So we proposed a new secondary trigger system design to reduce the background rate.
-		
+
 		We can reduce radioactivity background by the vertex of event, because the  radioactivity 
 		from  acrylic tank, oxygen-free copper and stainless steel most deposit energy at the edge of
 		LS sphere. Vertex reconstruction algorithm in FPGA is difficult and need too much resource.
@@ -430,7 +430,7 @@
 		normal event need about 2MByes disk storage space. For the muon events, all the 
 		PMTs will be fired. We assume the total PMT number of the central detector is about 
 		17746, so each muon event need about 36MBytes.
-		
+
 		If we can do the waveform compression, we can shorten the sampling time window from
 		1 $\mu$s to 50ns. So each normal event need about 0.1MBytes disk storage space, 
 		each muon event need about 1.8MBytes.
