@@ -437,7 +437,7 @@
 		is 1 $\mu$s. Each sampling point will occupy 2 bytes disk storage space, so each
 		normal event need about 2MByes disk storage space. For the muon events, all the 
 		PMTs will be fired. We assume the total PMT number of the central detector is about 
-		17746, so each muon event need about 36MBytes.
+		17746, so each muon event need about 36 MBytes.
 
 		If we can do the waveform compression, we can shorten the sampling time window from
 		1 $\mu$s to 50ns. So each normal event need about 0.1MBytes disk storage space, 
@@ -449,7 +449,31 @@
 		waveform compression to shorten the sampling time window from 1 $\mu$s to 50ns, each event
 		will need about 1.8MBytes.
 
+		In the most possible DAQ scheme, we can do zero suppression in  electronic system, and can't
+		do waveform compression. So for the most possible scheme we listed the estimated 
+		disk storage space of central detector on different energy and radius threshold in the table.3.
 
+
+	\end{multicols}
+	\begin{center}
+		\tabcaption{ \label{tab1} The disk storage space of central detector on different energy and radius threshold }
+		\footnotesize
+		\begin{tabular*}{170mm}{@{\extracolsep{\fill}} c c c c c c c}
+			\toprule  Disk Storage Space(MBytes/s)&E$>$0.1MeV & E$>$0.2MeV & E$>$0.3MeV & E$>$0.4MeV & E$>$0.5MeV & E$>$0.6MeV \\
+			\hline
+			R$<$10m &400.598  &317.369  &315.246  &313.138  &311.188  &309.020  \\  
+			R$<$11m &424.110  &319.089  &316.580  &314.189  &312.013  &309.234  \\
+			R$<$12m &518.613  &325.933  &321.949  &318.466  &315.418  &310.087  \\
+			R$<$13m &621.595  &332.270  &326.988  &322.522  &318.662  &310.880  \\
+			R$<$14m &621.595  &332.270  &326.988  &322.522  &318.662  &310.880  \\
+			R$<$15m &703.853  &347.291  &337.170  &329.547  &323.657  &312.730  \\
+			R$<$16m &1049.85  &425.088  &388.524  &363.975  &347.654  &322.219  \\
+			R$<$17m &1219.60  &476.504  &421.716  &385.604  &362.360  &328.461  \\
+
+			\bottomrule
+		\end{tabular*}
+	\end{center}
+	\begin{multicols}{2}
 
 
 
