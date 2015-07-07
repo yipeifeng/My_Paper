@@ -15,11 +15,11 @@
 
 	\begin{document}
 
-	\fancyhead[c]{\small Chinese Physics C~~~Vol. XX, No. X (201X)
-	XXXXXX} \fancyfoot[C]{\small 010201-\thepage}
-	\footnotetext[0]{Received XX XXXX 20XX}
+	%\fancyhead[c]{\small Chinese Physics C~~~Vol. XX, No. X (201X)
+	%XXXXXX} \fancyfoot[C]{\small 010201-\thepage}
+	%\footnotetext[0]{Received XX XXXX 20XX}
 
-	\title{The event rate estimation for JUNO experiment \thanks{Supported by National Natural Science Foundation of China (NSFC) under Contracts Nos. xxx, xxx; the Chinese Academy of Sciences (CAS) Large-Scale Scientific Facility Program; Joint Large-Scale Scientific Facility Funds of the NSFC and CAS under Contracts Nos.  U1232201, U1332201.} }
+	\title{The event rate estimation for JUNO central detector\thanks{This work is supported by the Strategic Priority Research Program of the Chinese Academy of Sciences, Grant No. XDA10010900; the CAS Center for Excellence in Particle Physics (CCEPP); National Natural Science Foundation of China (NSFC); the Chinese Academy of Sciences (CAS) Large-Scale Scientific Facility Program; Joint Large-Scale Scientific Facility Funds of the NSFC and CAS under Contracts Nos. U1332201.} }
 
 
 	\author{Fang Xiao(方肖)$^{1,2}$\email{fangx@ihep.ac.cn}
@@ -37,23 +37,36 @@
 	}
 
 	\begin{abstract}
-		ToDo
+		The Jiangmen Underground Neutrino Observatory (JUNO) is an experiment proposed to determine
+		the neutrino mass hierarchy and probe the fundamental properties of neutrino oscillation. 
+		The JUNO central detector is a spherical liquid scintillator detector with 20 kton fiducial mass. 
+		The central detector's event rate is very important for JUNO online 
+		electronic and DAQ(Data Acquisition)
+		system design. It also help us to estimate the offline disk storage sapce for JUNO experiment data.
+		So we estimate the event rate of JUNO central detector by threory and Geant4 simulation. 
+		We consider many event source such
+		as IBD(inverse $\beta$-decay) events, cosmic muon events, the radioactity events from materials of
+		central detector, the radioactity events from water pool and rock, the PMT's dark noise events.
+		We also propose and do a simulation of a promising secondary trigger system which is intend to
+		suppress low energy 
+		radioactity background and dark noise. The estimated disk storage sapce for JUNO experiment data
+		also be gived.
 
 	\end{abstract}
 
 
 	\begin{keyword}
-		JUNO,  event rate, computing resource
+		JUNO, event rate, disk storage space
 	\end{keyword}
 
 	\begin{pacs}
 		29.40.Mc,29.85.Fj
 	\end{pacs}
 
-	\footnotetext[0]{\hspace*{-3mm}\raisebox{0.3ex}{$\scriptstyle\copyright$}2013
-		Chinese Physical Society and the Institute of High Energy Physics
-		of the Chinese Academy of Sciences and the Institute
-	of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd}
+	%\footnotetext[0]{\hspace*{-3mm}\raisebox{0.3ex}{$\scriptstyle\copyright$}2013
+	%	Chinese Physical Society and the Institute of High Energy Physics
+	%	of the Chinese Academy of Sciences and the Institute
+	%of Modern Physics of the Chinese Academy of Sciences and IOP Publishing Ltd}
 
 	\begin{multicols}{2}
 
@@ -84,9 +97,8 @@
 		event rate by theory and Geant4 simulation. The
 		JUNO event rate is composed of signal rate and background
 		rate.With the estimated JUNO event rate,we can estimate the
-		offline computing resource such as cpu, disk, which we 
-		needed to do offline data saving and analyzing.The estimated
-		JUNO event rate can also help the online electronic design.
+		offline disk storage space and help the online electronic and 
+		DAQ(Data Acquisition) system design.
 
 		In the beginning, for the central detector we proposed
 		three design options: acrylic option, balloon option and 
