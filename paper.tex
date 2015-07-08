@@ -102,7 +102,7 @@
 		JUNO event rate is composed of signal rate and background
 		rate.With the estimated JUNO event rate,we can estimate the necessary
 		offline disk storage space for JUNO experiment data and help the 
-		online electronic and DAQ(Data Acquisition) system design.
+		online electronic and DAQ system design.
 		
 		We also propose and do a simulation of a promising secondary trigger system which is intend to
 		reduce the event rate of low energy 
@@ -456,38 +456,38 @@
 		\end{center}
 
 
-		\section{The disk storage space estimation}
-		Now for the JUNO DAQ(Data Acquisition), we have several promising schemes. 
+		\section{The DAQ data rate and disk storage space estimation}
+		Now for the JUNO DAQ, we have several promising schemes. 
 		If the electronic system can do zero suppression, we can just
 		save the fired PMT's output information.
-		For the normal
+		For the low energy
 		events we assume the average fired PMT number is 1000, the sampling time window 
-		is 1 $\mu$s. Each sampling point will occupy 2 bytes disk storage space, so each
-		normal event need about 2MByes disk storage space. For the muon events, all the 
+		is 1 $\mu$s. Each sampling point contribute 2 bytes data, so each
+		low energy event contribute 2MByes data. For the high energy muon events, all the 
 		PMTs will be fired. We assume the total PMT number of the central detector is about 
-		17746, so each muon event need about 36 MBytes.
+		17746, so each muon event contribute 36 MBytes.
 
 		If we can do the waveform compression, we can shorten the sampling time window from
-		1 $\mu$s to 50ns. So each normal event need about 0.1MBytes disk storage space, 
-		each muon event need about 1.8MBytes.
+		1 $\mu$s to 50ns. So each normal event contributes 0.1MBytes data, 
+		each muon event contributes 1.8MBytes.
 
 		If the electronic system can't do zero suppression, we need save all the PMT's output.
-		If the sampling time window is 1 $\mu$s, each event will need 36MBytes disk storage space. 
+		If the sampling time window is 1 $\mu$s, each event contributes 36MBytes data. 
 		If we can do 
 		waveform compression to shorten the sampling time window from 1 $\mu$s to 50ns, each event
-		will need about 1.8MBytes.
+		contribute about 1.8MBytes.
 
 		In the most possible DAQ scheme, we can do zero suppression in  electronic system, and can't
 		do waveform compression. So for the most possible scheme we listed the estimated 
-		disk storage space of central detector on different energy and radius threshold in the table.3.
+		DAQ data rate of central detector on different energy and radius threshold in the table.3.
 
 
 	\end{multicols}
 	\begin{center}
-		\tabcaption{ \label{tab1} The disk storage space of central detector on different energy and radius threshold }
+		\tabcaption{ \label{tab1} The DAQ data rate of central detector on different energy and radius threshold }
 		\footnotesize
 		\begin{tabular*}{170mm}{@{\extracolsep{\fill}} c c c c c c c}
-			\toprule  Disk Storage Space(MBytes/s)&E$>$0.1MeV & E$>$0.2MeV & E$>$0.3MeV & E$>$0.4MeV & E$>$0.5MeV & E$>$0.6MeV \\
+			\toprule  DAQ data rate(MBytes/s)&E$>$0.1MeV & E$>$0.2MeV & E$>$0.3MeV & E$>$0.4MeV & E$>$0.5MeV & E$>$0.6MeV \\
 			\hline
 			R$<$10m &400.598  &317.369  &315.246  &313.138  &311.188  &309.020  \\  
 			R$<$11m &424.110  &319.089  &316.580  &314.189  &312.013  &309.234  \\
