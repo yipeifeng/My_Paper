@@ -465,20 +465,22 @@
 		is 1 $\mu$s. Each sampling point contribute 2 bytes data, so each
 		low energy event contribute 2MByes data. For the high energy muon events, all the 
 		PMTs will be fired. We assume the total PMT number of the central detector is about 
-		17746, so each muon event contribute 36 MBytes.
+		18000, so each muon event contribute 36 MBytes.
 
-		If we can do the waveform compression, we can shorten the sampling time window from
-		1 $\mu$s to 50ns. So each normal event contributes 0.1MBytes data, 
-		each muon event contributes 1.8MBytes.
+		If we can do the waveform compression for low energy events in the electronic system, 
+		we can shorten the sampling time window from
+		1 $\mu$s to 50ns. So each low energy event contributes 0.1MBytes data, 
+		muon event can't do waveform compression.
 
 		If the electronic system can't do zero suppression, we need save all the PMT's output.
 		If the sampling time window is 1 $\mu$s, each event contributes 36MBytes data. 
 		If we can do 
-		waveform compression to shorten the sampling time window from 1 $\mu$s to 50ns, each event
-		contribute about 1.8MBytes.
+		waveform compression for low energy events in electronic system to shorten the sampling time
+		window from 1 $\mu$s to 50ns, each low energy event contribute about 1.8MBytes.
 
-		In the most possible DAQ scheme, we can do zero suppression in  electronic system, and can't
-		do waveform compression. So for the most possible scheme we listed the estimated 
+		In the most possible DAQ scheme, we can do zero suppression but can't
+		do waveform compression in the electronic system.
+		So for the most possible scheme we listed the estimated 
 		DAQ data rate of central detector on different energy and radius threshold in the table.3.
 
 
@@ -503,9 +505,38 @@
 	\end{center}
 	\begin{multicols}{2}
 
+		
+		If electronic system can't do waveform compression, we need do waveform compression in DAQ system and
+		then save the data to disk. With the waveform compression for low energy events, we can 
+		shorten the waveform  length from
+		1 $\mu$s to 50ns. So each low energy event contributes 0.1MBytes data, the estimated disk storage
+		space is listed in table.4.
+
+	\end{multicols}
+	\begin{center}
+		\tabcaption{ \label{tab1} The disk storage space of central detector on different energy and radius threshold }
+		\footnotesize
+		\begin{tabular*}{170mm}{@{\extracolsep{\fill}} c c c c c c c}
+			\toprule  disk storage space(MBytes/s)&E$>$0.1MeV & E$>$0.2MeV & E$>$0.3MeV & E$>$0.4MeV & E$>$0.5MeV & E$>$0.6MeV \\
+			\hline
+			R$<$10m  &122.630  &118.468  &118.362  &118.257  &118.159  &118.051 \\  
+			R$<$11m  &123.806  &118.554  &118.429  &118.309  &118.201  &118.062 \\
+			R$<$12m  &128.531  &118.897  &118.697  &118.523  &118.371  &118.104 \\
+			R$<$13m  &133.680  &119.213  &118.949  &118.726  &118.533  &118.144 \\
+			R$<$14m  &133.680  &119.213  &118.949  &118.726  &118.533  &118.144 \\
+			R$<$15m  &137.793  &119.965  &119.459  &119.077  &118.783  &118.236 \\
+			R$<$16m  &155.092  &123.854  &122.026  &120.799  &119.983  &118.711 \\
+			R$<$17m  &163.580  &126.425  &123.686  &121.880  &120.718  &119.023 \\
+
+			\bottomrule
+		\end{tabular*}
+	\end{center}
+	\begin{multicols}{2}
+
+
+
 
 		\section{Conclusion}
-
 		\vspace{-1mm}
 		\centerline{\rule{80mm}{0.1pt}}
 		\vspace{2mm}
