@@ -19,7 +19,7 @@
 	%XXXXXX} \fancyfoot[C]{\small 010201-\thepage}
 	%\footnotetext[0]{Received XX XXXX 20XX}
 
-	\title{The event rate estimation for JUNO central detector\thanks{This work is supported by the Strategic Priority Research Program of the Chinese Academy of Sciences, Grant No. XDA10010900; the CAS Center for Excellence in Particle Physics (CCEPP); National Natural Science Foundation of China (NSFC); the Chinese Academy of Sciences (CAS) Large-Scale Scientific Facility Program; Joint Large-Scale Scientific Facility Funds of the NSFC and CAS under Contracts Nos. U1332201.} }
+	\title{Estimation of event rate and data volume in JUNO\thanks{This work is supported by the Strategic Priority Research Program of the Chinese Academy of Sciences, Grant No. XDA10010900; the CAS Center for Excellence in Particle Physics (CCEPP); National Natural Science Foundation of China (NSFC); the Chinese Academy of Sciences (CAS) Large-Scale Scientific Facility Program; Joint Large-Scale Scientific Facility Funds of the NSFC and CAS under Contracts Nos. U1332201.} }
 
 
 	\author{Fang Xiao(方肖)$^{1,2}$\email{fangx@ihep.ac.cn}
@@ -71,30 +71,34 @@
 	\begin{multicols}{2}
 
 		\section{Introduction}
+                The Jiangmen Underground Neutrino Observatory (JUNO) is located in Kaiping, Jiangmen, in Southern China.
+                It's about 53 km away from Yangjiang and Taishan nuclear power plants, both of which are under construction.
+                The funding of JUNO has been approved in 2014 by China goverments, now it starts construction and expects to take data in 2020.
 		JUNO\cite{lab1} is a multipurpose neutrino experiment. It is
 		designed to determine neutrino mass hierarchy and precisely
 		measure oscillation parameters by detecting reactor
 		neutrinos from the Yangjiang and Taishan Nuclear Power
 		Plants. It also intended to observe supernova neutrinos,
 		study the atmospheric, solar neutrinos and geo-neutrinos,
-		and perform exotic searches.
+		and perform exotic searches, more details about physics motivation can be found in Ref.yellow book. 
 
-		The JUNO experiment hall is located in Kaiping, jiangmen,
-		in Southern China. It's about 53 km away from Yangjiang
-		and Taishan Nuclear Power Plants, both of which are
-		under construction. The planned total thermal power of
-		these reactors is 36 GW. In addition, there are no other
-		nuclear power plants within 200 km.  The  20-thousand-ton
-		liquid scintillator detector of unprecedented 3\% energy
-		resolution (at 1 MeV) is installed at 700-meter deep
-		underground to suppress backgrounds from cosmic ray muons. 
+                Event rate and data volume of JUNO detector are essential inputs to design electronics and readout system, 
+                which are used to read signals out and save them to offline disks or tapes. 
+                All data taken by JUNO detector will be processed offline, so in order to reasonably estimate and prepare computing resources and storage, 
+                event rate and data volume are also required.
+                In this paper, event rate from different signal sources have been estimated based on JUNO detector simulation, 
+                and the effects from different trigger schemes have been taken into account. Finally, the data volume is also reported.
 
-		In recent years, liquid-scintillator detector has played a important role in low-energy
-		neutrion physics experiments \cite{lab2, lab3, lab4, lab5, lab6, lab7}.
-		JUNO central detector with 35.4m diameter  is the largest
-		liquid scintillator detector currently in the world. 
+                This paper is organized as follow: JUNO detector is introduced in section 2; signal sources are analyzed in section 3.
 
-		The experiment hall is expected to be finished at 2019. 
+                However, event rate heavily depends on trigger scheme used. In JUNO, two trigger schemes are proposed, one is based on 
+                JUNO detector consists of central detector and veto detector. 
+                The central detector is made of 20k ton liquid scintillator contained in a 34.5 meter diameter acrylic sphere. 
+                The acrylic sphere is supported by a stainless struss, on which ~17,000 PMTs are mounted. The designed energy resolution of central detector is 3\% at 1 MeV.
+                The JUNO detector will be installed underground with 700 meter overburdern to suppress backgrounds from cosmic muons.
+                
+		Electronics, readout system and trigger are key components in JUNO.
+                The experiment hall is expected to be finished at 2019. 
 		It is possible to get data from the experiment at 2020.
 		The JUNO central detector's event rate is very important for 
 		JUNO experiment design. So we want to estimate JUNO
@@ -119,112 +123,132 @@
 		%For the backgrounds such as natural radioactivity background(U, Th, K), cosmic muons, the event rate of JUNO is possibly large.  
 
 
-		\section{JUNO detector scheme}
+		\section{JUNO detector}
 		The JUNO detector is composed of a central detector, a water
-		cherenkov detector and a muon tracker(shown in Fig.1).The 
-		central detector is a LS detector of 20kton fiducial mass and
-		3\%/$\sqrt{E(MeV)}$ energy resolution.The central detector is
-		submerged in a water pool to be shielded from natural 
-		radioactivities from the surrounding rock and air.The water pool
-		is equipped with PMTs to detect the cherenkov light from muons.
-		On top of the water pool, there is a another muon detector to 
-		accurately measure the muon track.
+		cherenkov detector and a muon tracker(shown in Fig.1). The 
+		central detector is made of 20k ton liquid scintillator contained in a 34.5 meter diameter acrylic sphere.
+                The acrylic sphere is supported by a stainless-steel truss, on which 17,000 PMTs are mounted to detect scintillation lights from LS. 
+		CD(Central Detector) will be installed in a water pool used to shield background of natural radioactivities from surrounding rock and environment. 
+                The water pool is also a water cherenkov detector which can tag cosmic muons by detecting cherenkov lights. 
+                Water between PMT and acrylic sphere can also be used as a buffer to shield radioactivity background from PMTs and stainless-steel truss.
+                The thickness of the buffer is about 1.4 meter. On the top of CD, a muon tracker will be intalled to detect muons with better position and direction resolution.
+                The designed energy resolution of CD can reach 3\% at 1 MeV, corresponding to 1100 pe/MeV of energy scale.
+
+                Electronics and readout system need to cope with signals from 17,000 PMTs when an event is triggered.
+                Several electronics schemes have been proposed, depending on where to put electronics units.
+                FADC is proposed to digitize the signal of a fired PMT with 1GHz sampling rate.
+                All data from FADC are transmitted to online computing farm through data links.
+
+                Trigger system is essential for JUNO detector, which is used to reject backgrounds as much as possible and keep high detection efficiency for physical events.
+                A common trigger strategy is to tag events using multiplicity of fired PMTs, which has been successfully used in Daya Bay experiment. It can reach 100\% trigger
+                efficiency for IBD events with 0.5 MeV trigger threshold. However, for some scientific motivations, like solar neutrino and supernova neutrino, a much lower 
+                trigger threshold is preferred. But the lower trigger threshold is limited by coincidence of PMT dark noise. 
+                So a sophisticated trigger method is proposed based on vertex fitting, it will be discussed more in next section.
+                
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
 			\includegraphics[width=7cm]{CD.png}
 			\figcaption{\label{fig2}   Schematic view of the JUNO detector}
 		\end{center}
 
-		For the central detector, there are two design options at 
-		present. The default option is acrylic vessel with stainless
-		steel truss. The backup option is liquid balloon with stainless
-		steel vessel. Since the two options are similar , we just 
-		consider the acrylic option when estimate the event rate.
 
-		In this option, the inner acrylic tank is spherically 
-		shaped holding 20 kton LS.The acrylic sphere is supported 
-		by the steel truss while the truss is held by some supporting 
-		legs at the bottom of the water pool in the experiment hall. 
-		The thickness of the acrylic tank is 12 cm. Between the 
-		acrylic sphere and the truss, there are many PMTs carried 
-		inward facing to the truss to detect the optical signal from LS.
-		Ultrapure water is filled in as shielding liquid outside of the    		
-		acrylics tank.	
-
-
-		\section{The source of event }
+		\section{Events rate of physical events in CD}
 
 		%In JUNO experiment, particles deposit energy in LS and release
 		%photons.If the energy of the photons which detected by the PMT
 		%exceed the trigger system's energy threshold, the detector will
 		%record the electronic output information as a event.
+                When particles deposit their energy in LS, LS can be excited and emits scintillation lights during deexcitation.
+                The amount of scintillation lights is proportional to the quenched deposited energy, in which quenching effects are considered.
+                Different particles have the different quenching factors. The scintillation lights and Cherenkov lights, if particle's velocity is larger than light velocity in LS, can be detected by PMTs in CD,
+                then converted to photo-electrons and PMT pulses after processing electronics system. Finally, if the amount of light is enough to fire a trigger, readout system will save PMT signals within a readout time window and form an event.
 
-		The event rate we discussed is singles rate that signals from
-		particles depositing visible energy greater than trigger 
-		system's energy threshold in LS.
+                
+		The events detected by CD can be divided into physical events and background events. Physical events include all events that we are interested in, 
+                like reactor neutrino, solar neutrino, geo-neutrino, atmesphere neutrino, etc.
+                For each physical channel, the original event rate has been well 
+                estimated in JUNO yellow book. Combining its energy spectrum, 
+                the event rates of each physics with different threshold of multiplicity trigger are summarized in table 1.
 
+        \begin{center}
+                \tabcaption{ \label{tab1}  rates of different event source} 
+                \footnotesize
+                \begin{tabular*}{80mm}{@{\extracolsep{\fill}} c c }
+			\toprule  event source&Rates  \\
+                        \hline
+                        IBD event               & 83 per day   \\
+                        Li9/He8 $\beta$-n decay & 84 per day   \\
+                        fast neutron            & 0.1 per day  \\
+                        C13($\alpha$,n)O16      & 0.05per day  \\
+                        Geo-neutrino            & 1.5 per day  \\
+                        cosmic muon             & 3Hz          \\
+                        Natural Radioactivity   & 1006702.8Hz  \\
+			Solar neutrino          & 0.45Hz       \\
+			Atmospheric neutrino    & 0.94per day  \\
+                        \bottomrule
+                \end{tabular*}
+        \end{center}
 
-		Although JUNO is a multi-purpose neutrino experiment.The main 
-		physics
-		goal is to determine neutrino mass hierarchy and precisely
-		measure oscillation parameters by detecting reactor neutrinos 
-		from the Yangjiang and Taishan Nuclear Power Plants. So we 
-		consider the reactor neutrinos as the main source of signal event.
+                
+                The solar neutrino is a major source to events rate of physical events, which can reach 0.45 Hz totally if no trigger threshold is applied, and is mainly from pp channel.
+                But, the energy of pp neutrino is quite low. If only a simple multiplicity trigger is chosen, the trigger threshold can not be lower than 0.5 MeV 
+                due to limitation of radioactivity background and coincidence of PMT dark noise. With 0.5 MeV threshold, most of pp neutrino will be discarded by trigger system, the solar neutrino events rate becomes 0.04 Hz.
 
-
-		The reactor electron antineutrino interacts with proton via 
-		the inverse $\beta$-decay(IBD) reaction in the liquid 
-		scintillator, and releases a positron and a neutron. 
-		The positron depositsits energy quickly, providing a prompt 
-		signal. The energy of positron carries most of the kinetic 
-		energy of the neutrino.
-		The neutron is captured by proton after an average time of 
-		200$\mu$s, then releases a 2.2 MeV gamma, providing a delayed 
-		signal. The coincidence of prompt-delayed signals provides a 
-		distinctive antineutrino signature. The estimated IBD reaction 
-		rate is about 40/day\cite{lab9}. 
-
-		The signals is a small part of event source. The most of
-		the event source is background.The background is composed of
-		the radioactivity in detector materials and detector 
-		surrounding, the cosmic muon and the electronic dark noise.
-
-		The background induced by cosmic ray muon is the main background
-		and not easy to remove. Muon can induce high energy neutron as
-		fast neutron background. And muon spallation can induce Li9/He8
-		background.
-
-		The electronic dark noise is mainly caused by thermal 
-		emission of electrons and radioactivity from components of the 
-		PMTs. Although the energy of dark noise is small, it may exceed
-		the energy threshold when the energy threshold is low.
-
-
-		\section{The event rate estimation of central detector}
-		The JUNO detector consists of a central detector, a water 
-		cherenkov detector and a muon tracker. The central detector is the 
-		main part of JUNO detector.As we mentioned previously, 
-		the signal
-		rate is about 40/day. We will discuss the background in the 
-		following.
-
-		\subsection{Natural radioactivity estimation}
-		Natural radioactivity exists in the materials of central 
-		detector and the rock around the water pool.
-		The materials of central detector in the acrylic option mainly
-		include LS, acrylic, oxygen-free copper, stainless steel, as
-		well as the glass of PMT.
-		The formations of these materials in different conditions 
-		cause more or less existence of radioelement.
-		The Rn in the water pool also induced radioactivity.
-		The singles rate of each material's natural radioactivity 
-		in different energy threshold is 
-		listed in table.1. The detailed discussion can be found in
-		the reference\cite{lab10}.
+                The total events rate from physical channel is less than 1 Hz, which is negligible comparing with that from radioactivity background.
+                However, if a supernova bursts at a typical distance of 10kpc, neutrino events rate has been estimated to be hundreds of Hz from different channels, 
+                and events rate is much higher in the first second during explosion. The supernova can sustain for about 10 seconds. 
+                In JUNO, all data in 10 seconds will be read out without trigger threshold. For a supernova with shorter distance, the higher events rate is expected. 
+                
+                
+                \section{Events rate of background events in CD}
+                \subsection{Radioactivity background}
+                One of main contributions to event rate is natural radioactivity background, which comes from various sources, like $^{238}$U, $^{232}$Th ,$^{40}$K. 
+                They come from different materials in JUNO detector. In order to control the event rates of background, the purity of each material used to make detector is required by mass hierachy sensitivity.
+		In Daya Bay experiment, the U/Th concentrates in LS are 4$\times10^{-5}$ g/g and 2$\times10^{-5}$ g/g respectively.
+		In JUNO, a better purification system will be applied, which can reduce the U/Th two order of magnitude, to the level of $10^{-6}$ g/g. For $^{40}$K, it can reach $10^{-7}$ g/g. 
+		Besides U/Th/K, cosmic muons continuously produce $^{14}$C from $^{14}$N, via the reaction $^{14}$N(n,p)$^{14}$C.
+		If the petroleum used to make LS are located deep underground and are shielded from high cosmic ray flux, one can expect very low $^{14}$C contanimation in LS. 
+		But for worst case, petroleum may locate on the surface of earth which suffer with very high flux of cosmic muons, $^{14}$C abundance is esimated to be $10^{-18}$ g/g.
+		The radioactivity in PMT glass depends on which glasses are selected to make PMTs.
+		In this paper, the shott glass is used for event rate studes and its U/Th/K concentrations are 22ppb, 20ppb and 3.54ppb respectively.
+		For other glasses, the impacts can be easily scaled based on results of shott glass. 
+		However, due to 1.4 meter water buffer between PMTs and LS, the event rate from PMT glass can be reduced a lot. This effect has been included in our simulation.
+                The acrylic sphere is quite closed to LS in which the radioactivity can easily deposit their energies in LS and be triggered to form events.
+                Radioactivity existing in stainless truss also contributes total events rate in CD, but silimar with that in PMT glass, it is heavily suppressed by water buffer.
+                U/Th/K concentration in stainless truss are proposed to be 1.2 mBq/kg, 8.0 mBq/kg and 13.4 mBq/kg respectively based on Ref.XinYing.
+		$^{60}$Co can also be generated when cosmic muons go through stainless truss.
+                Many copper plates are used to support acrylic shpere, and radioactivity in copper has to be taken into account in event rate studies.
+		The contamination in copper depends on technology to make high purity copper. Based on experiences from Ref., 1.23 mBq/kg $^{238}$U, 0.405 mBq/kg $^{232}$Th and 0.0377 mBq/kg $^{40}$K in copper are used in this study. 
+		Fast neutrons produced by cosmic muons reacting on $^{63}$Cu produce $^{60}$Co. $^{60}$Co abundance is 0.3 mBq/kg.
+                Radon in water is requied to be less than 0.2 Bq/m3, then no significant effects on MH senstivity. And U/Th/K concentrations in rock are 10ppm, 30ppm and 5ppm respectively.
+                The radioacitivity impurity in different materials are summarized in table 2. 
 
 	\end{multicols}
 	\begin{center}
-		\tabcaption{ \label{tab1}  The inner singles rates}
+		\tabcaption{ \label{tab1}  The proposed concentration of radioactive impurity in different detector materials.}
+		\footnotesize
+		\begin{tabular*}{190mm}{@{\extracolsep{\fill}}ccccccccc}
+			\toprule \hphantom{0} & $^{238}$U & $^{232}$Th & $^{40}$K  & $^{210}$Pb & $^{85}$Kr & $^{39}$Ar & $^{60}$Co & $^{14}$C\\
+			\hline
+			LS & $10^{-6}$ ppb & $10^{-6}$ ppb & $10^{-7}$ ppb & $1.4\cdot10^{-13}$ ppb & 50 $\mu Bq/m^3$ & 50 $\mu Bq/m^3$ & \~{}  & 1$\times10^{-18}$g/g \\
+			Glass & $22$ ppb & $20$ ppb & $3.54$ ppb & \~{} & \~{} & \~{} & \~{} & \~{} \\
+			Acrylic & $10$ ppt  & $10$ ppt & $10$ ppt & \~{} & \~{} & \~{} & \~{} & \~{} \\
+			Steel & $ 1.2$ mBq/kg & $8.0$ mBq/kg  & $13.4$ mBq/kg & \~{} & \~{} & \~{}& $2.0 $ mBq/kg  & \~{} \\
+			Copper & $1.23$ mBq/kg  & $0.405$ mBq/kg & $0.0377$ mBq/kg & \~{} & \~{} & \~{} & $0.3 $ mBq/kg & \~{} \\
+			\bottomrule
+		\end{tabular*}
+	\end{center}
+
+	\begin{multicols}{2}
+
+
+		A detailed detector simulation software has been implemented based on Geant4. For each material in JUNO detector, 
+		the radioactivity listed in table 2 are used in detector simulation to study its events rate.
+		The results with different trigger thresholds are summarized in table 3, the multiplicity trigger is used as default.
+
+	\end{multicols}
+	\begin{center}
+		\tabcaption{ \label{tab1}  The inner singles rates} 
 		\footnotesize
 		\begin{tabular*}{170mm}{@{\extracolsep{\fill}} c c c c c c c c c}
 			\toprule  Singles Rate(Hz)&LS &Glass &Acrylic  &Steel &Copper &Rn &Rock  &Sum \\
@@ -241,122 +265,80 @@
 	\end{center}
 	\begin{multicols}{2}
 
-		You may notice that when the energy threshold set to 0.1MeV the singles rate turned very
-		large. It's becasue the radioelement C14 in LS with very high radioactive activity and very
-		few energy depositing in each event. We just assume the concentration of C14 in LS is $10^{-18}$ g/g
-		to do this estimation.
 
-		\subsection{Muon estimation}
-		In order to reduce muon background, the central detector is 
-		located in 460 meters underground level. There are about 700
-		meters rock on the top of the experiment hall.Muno rate is about
-		0.003Hz/$m^2$ and average muon energy is 214GeV from simulation
-		study\cite{lab11}. Compared to the ground surface, the muon flux
-		is reduced about 60000times.
+		The events rate increases when the trigger threshold discreases. For a normal threshold of 0.5 MeV, the total events rate is about 130 Hz.
+		Acrylic and Radon in water are two major sources of events. For radioactivity in LS, the events rate is suddenly changed from 17 Hz to 352 Hz.
+		It is caused by $^{14}$C in LS generated by cosmic muons. $^{14}$C goes through radioactive beta decay by emitting an electron and an electron antineutrino.
+		The emitted electrons have a maximum energy of 0.156 MeV and can not be triggered with 0.2 MeV threshold. 
+		While, a fraction of $^{14}$C can be triggered by 0.1 MeV threshold.
 
-		The radius of LS sphere is 17.7m, so the muon rate in central
-		detector is about: $\pi \times 17.7^2 \times 0.003 = 2.95$Hz.
+		\subsection{Cosmic muons}
+		JUNO detector is located uderground with 748m overburder. By considering the detailed map at JUNO site, the cosmic ray flux can be simulated by MUSIC.
+		Then, the muon flux in experimental hall is obtained to be 0.003Hz/m2, and the average energy of muons are determined to be about 215 GeV.
+		Based on muon flux and dimensions of CD, the total muon events rate in CD is calculated to be 3 Hz.
 
-		The remaining energy cosmic muon rays can also produce a large number of neutrons
-		in the rock around central detector,these neutron can produce fast 
-		neutron background in the central detector. In order to shield the neutrons and the
-		natural radioactivity in the rock, 2.5m meter thickness water is used for shielding.
+		The cosmic muons which go into the CD can be seperated into shower muons and non-shower muons. The non-shower muons are minimal ionization particles.
+		The shower muons may generate neutrons and radioactivity isotopes with long lifetime, 
+		which can form delayed signals and be tagged as seperated events besides muon track itself. 20\% of muons are shower muons from simulation.
+		And after processing a detailed muon simulation, we found that the events rate induced by muons is about 5 Hz totally.
 
-		Spallation muon interact with scintillator can induce Li9/He8
-		background. We use the  formula to estimate Li9/He8 
-		background: $Y_n = C \times Q_c \times E^\alpha$.
 
-		In this formula we assume the yield is power law function of 
-		muon energy. $Q_c$ is carbon density factor for different
-		liquid scintillator.
-
-		In JUNO experiment the mean muon energy is 215GeV, the mass of
-		liquid scintillator is 20kton, the muon flux is 0.003Hz/$m^2$, 
-		the $\alpha$ in formula is 1.06$\pm$0.2 .The yield of 
-		Li9/He8 is $(2.3\pm0.5\times10^{-7})(\mu g /cm^2)^{-1}$.
-		So the Li9/He8 event rate in JUNO is $57\pm14$/day.
-
-		\subsection{Dark noise estimation}
-
-		To estimate the event rate of dark noise, we suppose a detector
-		has N PMTs, each PMT has dark current rate f Hz, multiplicity 
-		trigger threshold is m PMTs, trigger integration time is $\tau$
-		ns. So the noise rate can be calculated by the below formula:
+		\subsection{PMT dark noise}
+		Coincidence of PMT dark noise also has probabilities to trigger an event, depending on trigger threshold.
+		In JUNO, since ~17,000 20 inch PMTs will be installed, it is much easier to be coincident in a readout time window and trigger an event, 
+		comparing with that in Daya Bay experiment, in which only 192 8 inch PMTs are used in each anti-neutrino detector.
+		While the probability of PMT dark noise coincidence can be accurately calculated using the formula:
 
 		\begin{displaymath}
 			R = \frac{1}{\tau}\sum_{i=m}^{N}iC^{i}_{N}(f\tau)^i
 			(1-f\tau)^{N-i}
 		\end{displaymath}
 
+		in which, N is the number of PMTs and m is number of fired PMTs that determined by trigger threshold, assuming multiplicity trigger is used.
+		f denotes dark rate of each PMT; $\tau$ indicates length of trigger time window.
 
-		In JUNO experiment, we assume the total PMT number is 17746, 
-		the dark current rate of each PMT is 50kHz, the trigger 
-		integration time is 300ns. The number of photons which are
-		received by PMTs is 1200, when the visible energy is 1MeV.
-		So the estimated dark noise event rate can be shown in Fig2.
+		The total PMT number is assumed to be 17746 during calculation of coincident probability. 
+		And MCP-PMTs are assumed to use in JUNO detector. The dark rate of each MCP-PMT is 50kHz. 300ns of trigger time window is selected.
+		The calculated events rate versus trigger threshold is shown in Fig 2, in which the re-trigger is allowed,
+		and assuming single photo-electron on each fired PMT caused by dark noise.
+		The numbers of fired PMTs are also converted into energy based on energy scale of 1100pe/MeV.
 
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
 			\includegraphics[width=8cm,height=6cm]{Noise_rate_50kHz_300ns.eps}
-			\figcaption{\label{fig2}    
-				Dark noise event rate when trigger integration time is 300ns 
+			\figcaption{\label{fig2}
+				Dark noise event rate when trigger integration time is 300ns
 			}
 		\end{center}
 
 
-		From Fig2 we can see the energy threshold must greater than 0.3MeV. So that
-		the dark noise will induce few background event rate. 
+		In order to suppress events from coincidence of dark noise, the trigger threshold should be greater than 0.5MeV, 
+		and the corresponding events rate can be negligible. Although the lower trigger threshold is preferred by some physics topics,
+		it is not achievable by simple multiplicity trigger limitted by PMT dark noise. A sophisticated trigger method will
+		be discussed in next section, which allows lower trigger threshold. 
 
 
-		\subsection{A promising secondary trigger system design}
+		\subsection{A sophisticated trigger scheme}
 
-		If we just study the IBD event, we can set the first trigger system's energy
-		threshold to 0.7MeV. So the dark noise will induce few event rate, and from 
-		Table.1 we can see the total radioactivity background event rate in central
-		detector is 75.75Hz ,when energy threshold greater than 0.7 MeV.
+		The multiplicity trigger with 0.5 MeV trigger threshold is good enough for mass hierarchy measurements and most of other physics. 
+		But the lower trigger threshold is also preferred by solar neutrinos and supernova neutrinos.
+		Since the threshold of multiplicity trigger is limited by PMT dark noise, a sophisticated trigger scheme is proposed.
+		Events can be triggered by either of these two trigger schemes. A simple idea is to shorten trigger time window to reduce effects from dark noise.
+		If events positions are known for trigger system, time of flight (TOF) of light can be corrected, and then a shorter trigger window can be used.
+		But, in other hands, events from radioactivity will increase when trigger threshold decreases.
+		Because most of radioactivity are from outer region of CD, a fiducial volume cut should be very effective to reduce events rate of radioactivity.
+		FPGA can not handle complex position reconstruction algorithms, so a simple method is used to reconstrut event position with acceptable position resolution.
+		Using this method, CD is divided into 179 cubic volumes. For each volume, the dimension is 5m$\times$5m$\times$5m.
+		To get the event position, the time of flight in each volume is corrected for each PMT. If a volume contains the event, 
+		the narrowest the first hit time distribution on all fired PMTs should be gotten. 
+		Then, the center of this cubic volume is taken as the event position.
+		This method has been proved and validated by simulations, and events rate with this new trigger scheme are also studied.
 
-		But if we want study solar neutrinos, supernova neutrinos and other low energy neutrino sources,
-		, low energy threshold is very important. When the energy threshold is decreased,
-		the background rate of radioactivity and dark noise will be increased. 
-		So we proposed a new secondary trigger system design to reduce the background rate.
-
-		We can reduce radioactivity background by the vertex of event, because the  radioactivity 
-		from  acrylic tank, oxygen-free copper and stainless steel most deposit energy at the edge of
-		LS sphere. Vertex reconstruction algorithm in FPGA is difficult and need too much resource.
-		So we can't reconstruct event vertex accurately online. But we can use another method to find
-		the approximate event vertex.
-
-		In this method, we want to correct the PMT's first
-		hit time by deducting photon's flying time in LS. 
-		Because the distribution of PMT's corrected first hit time
-		is narrow, we can use this character to find the approximate event vertex. 
-		If we know the vertex of the event, we can know the photon's flying time from vertex to each
-		PMT.
-		So it is easy to correct the PMT's first hit time
-		by deducting TOF(Time Of Fly).
-
-		But as mentioned before , it is difficult to find event
-		vertex accurately by FPGA's algorithm online. So we
-		divide the central detector volume into 179 5m$\times$5m$\times$5m
-		cubic regions. We assume each region's center as a possible event vertex.
-		For each event, we correct the PMT's 
-		first hit time for each possible event vertex in parallel.
-
-
-		As we have 179 cubic regions, we can get 179 distributions of corrected 
-		PMT's first hit time. 
-		If the region contain the true event vertex, 
-		the distribution of corrected PMT's first hit time 
-		will be most narrow.
-		So we can find the region which contain the event vertex. 
-		And then using the center of the region as the approximate
-		event vertex.
-
-		To demonstrate this method is viable, we simulated 4MeV 
-		positron generated at R=15m in central detector. 
-		Fig.3 show the PMT's first hit time without TOF corrected.
-		Fig.4 show the PMT's first hit time with TOF corrected.
-
+		Fig.3 and Fig. 4 show the first hit time distribution on PMTs in the volume containning an event without and with TOF correction, 
+		by simulating 4MeV e+ at (15,0,0) in CD. After applying TOF correction, a much narrower distribution is obtained.
+		For other volumes, which don't contain the generated position of event, hit time distribution is broader, shown in Fig. 5 as an example.
+		Based on the first hit time distribution after TOF correction, a multiplicity trigger is applied again, but trigger time window can be reduced from
+		300ns to 50ns. 
 
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
@@ -374,12 +356,8 @@
 		\end{center}
 
 
-		From Fig.3 and Fig.4 we can see the distribution of PMT's first hit time is narrow
-		when we do the TOF correction. So the width of distribution can be used to check if 
-		the TOF correction is valid.
-
-		We simulate the low energy C14 event and give the delta of true event vertex and 
-		the reconstructed approximate event vertex in Fig.5. 
+		The reconstructed positions are also validated by using the truth positions gotten from Monte Carlo (MC) truth information. 
+		The bias between reconstructed and truth event positions are drawn in Fig. 6, by using 14C events in LS. 
 
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
@@ -387,16 +365,13 @@
 			\figcaption{\label{fig2}   Delta of true C14 event vertex and reconstructed approximate event vertex}
 		\end{center}
 
-		Form Fig.5, we can see the error of reconstructed event vertex is less than 5 meter. 
-		With the reconstructed approximate vertex, we can
-		set different radius threshold to reduce radioactivity
-		backgrounds. In the trigger system, the first and secondary trigger system are in parallel. 
-		In the first trigger system, we record the events which the visible energy
-		greater than energy threshold. In the secondary trigger system, 
-		we record the events which the visible energy less than energy threshold 
-		and the reconstructed vertex position less than radius threshold.
-		In table.2 we show the central detector's sum radioactivity background rate
-		on different energy and radius threshold.
+		The largest bias in Fig. 6 is smaller than the volume size, 5 meter, which means the volume can be 100\% correctly found.
+		The resolution of reconstructed positions is about 1.55 meter, which agrees with expections.
+
+
+		To take the numbers in table 1 as the inputs of simulations, events rate from background are estimated again with new trigger scheme. 
+		The events rate from different radioactivity sources are summed up and the results are listed in table 2 with different trigger threshold and in
+		different fiducial volumes.
 
 
 	\end{multicols}
@@ -428,60 +403,24 @@
 	\end{center}
 	\begin{multicols}{2}
 
-
-		The promising secondary trigger system not only can
-		reduce radioactivity background event rate, but also can
-		reduce dark noise event rate.
-
-
-		In Fig.2 we can see if we set energy threshold below
-		0.3MeV, the dark noise event rate will be high. But in
-		Fig.4 we can see the width of PMT's first hit time distribution
-		is narrow when we do the TOF correction.
-		If we find the approximate vertex of
-		event, we can correct the PMT's first hitTime. And the
-		width of PMT's first hit time distribution will be narrow.
-		So we can reduce the trigger integration time from 300ns
-		to 50ns. And then we can use the formula (1) to estimate
-		the dark noise event rate, when trigger integration time
-		is 50ns. The rescult is shown in Fig.5.
-
+		Events rate caused by PMT dark noise coincidence is re-calculated with 50ns trigger time window, 
+		using the similar method discussed in previous sections. The calculated events rates are shown in Fig. ??.
+		Using the new trigger scheme, trigger threshold can be reduced to 0.2 MeV, and events rate from radioactivity is still under control.
 
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
 			\includegraphics[width=8cm,height=6cm]{Noise_rate_50kHz_50ns.eps}
-			\figcaption{\label{fig2}    
-				Dark noise event rate when trigger integration time is 50ns 
+			\figcaption{\label{fig2}
+				Dark noise event rate when trigger integration time is 50ns
 			}
 		\end{center}
 
+		\section{Estimation of data volume in JUNO}
+		JUNO is proposed to run at least 6 years for neutrino mass hiarachy measurements and other physics topics. 
+		It's important for offline data processing and disk storage preparation to estimate the data volume after 6 years running. 
+		Different events have different event size, depending on number of photo-electrons detected by CD.
+		Fig. ?? shows the PE numbers from different event sources, including radioactivity events and different physical events. 
 
-		\section{The DAQ data rate and disk storage space estimation}
-		Now for the JUNO DAQ, we have several promising schemes. 
-		If the electronic system can do zero suppression, we can just
-		save the fired PMT's output information.
-		For the low energy
-		events we assume the average fired PMT number is 1000, the sampling time window 
-		is 1 $\mu$s. Each sampling point contribute 2 bytes data, so each
-		low energy event contribute 2MByes data. For the high energy muon events, all the 
-		PMTs will be fired. We assume the total PMT number of the central detector is about 
-		18000, so each muon event contribute 36 MBytes.
-
-		If we can do the waveform compression for low energy events in the electronic system, 
-		we can shorten the sampling time window from
-		1 $\mu$s to 50ns. So each low energy event contributes 0.1MBytes data, 
-		muon event can't do waveform compression.
-
-		If the electronic system can't do zero suppression, we need save all the PMT's output.
-		If the sampling time window is 1 $\mu$s, each event contributes 36MBytes data. 
-		If we can do 
-		waveform compression for low energy events in electronic system to shorten the sampling time
-		window from 1 $\mu$s to 50ns, each low energy event contribute about 1.8MBytes.
-
-		In the most possible DAQ scheme, we can do zero suppression but can't
-		do waveform compression in the electronic system.
-		So for the most possible scheme we listed the estimated 
-		DAQ data rate of central detector on different energy and radius threshold in the table.3.
 
 
 	\end{multicols}
@@ -505,7 +444,7 @@
 	\end{center}
 	\begin{multicols}{2}
 
-		
+
 		If electronic system can't do waveform compression, we need do waveform compression in DAQ system and
 		then save the data to disk. With the waveform compression for low energy events, we can 
 		shorten the waveform  length from
