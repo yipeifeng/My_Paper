@@ -297,20 +297,21 @@
 
 		The total PMT number is assumed to be 17746 during calculation of coincident probability. 
 		And MCP-PMTs are assumed to use in JUNO detector. The dark rate of each MCP-PMT is 50kHz. 300ns of trigger time window is selected.
-		The calculated events rate versus trigger threshold is shown in Fig 2, in which the re-trigger is allowed,
+		The calculated events rate versus trigger threshold with 300ns trigger time window
+		is shown in Fig.2 (the blue line), in which the re-trigger is allowed,
 		and assuming single photo-electron on each fired PMT caused by dark noise.
 		The numbers of fired PMTs are also converted into energy based on energy scale of 1100pe/MeV.
 
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
-			\includegraphics[width=8cm,height=6cm]{Noise_rate_50kHz_300ns.eps}
+			\includegraphics[width=8cm,height=6cm]{Rate_all.png}
 			\figcaption{\label{fig2}
-				Dark noise event rate when trigger integration time is 300ns
+				Dark noise event rate with different trigger time window
 			}
 		\end{center}
 
 
-		In order to suppress events from coincidence of dark noise, the trigger threshold should be greater than 0.5MeV, 
+		In order to suppress events from coincidence of dark noise, the trigger threshold should be greater than 0.5MeV when trigger time window is 300ns, 
 		and the corresponding events rate can be negligible. Although the lower trigger threshold is preferred by some physics topics,
 		it is not achievable by simple multiplicity trigger limitted by PMT dark noise. A sophisticated trigger method will
 		be discussed in next section, which allows lower trigger threshold. 
@@ -332,38 +333,33 @@
 		Then, the center of this cubic volume is taken as the event position.
 		This method has been proved and validated by simulations, and events rate with this new trigger scheme are also studied.
 
-		Fig.3 and Fig. 4 show the first hit time distribution on PMTs in the volume containning an event without and with TOF correction, 
-		by simulating 4MeV e+ at (15,0,0) in CD. After applying TOF correction, a much narrower distribution is obtained.
-		For other volumes, which don't contain the generated position of event, hit time distribution is broader, shown in Fig. 5 as an example.
+
+		Fig.3 show the first hit time distribution on PMTs in different situations,
+		by simulating 4MeV e+ at (15,0,0) in CD. After applying TOF correction in the 
+		volume which contain the generated position of event, a much narrower distribution 
+		is obtained (the blue line). And without TOF correction, the distribution is wider (the green line).
+		For other volumes, which don't contain the generated position of event, hit time distribution is broader (the red line).
 		Based on the first hit time distribution after TOF correction, a multiplicity trigger is applied again, but trigger time window can be reduced from
 		300ns to 50ns. 
 
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
-			\includegraphics[width=8cm,height=6cm]{4MeV_e+_PMT_first_hitTime.eps}
-			\figcaption{\label{fig2}   PMT's first hit time without TOF corrected 
-			}
-		\end{center}
-
-
-		\begin{center}
-			%\includegraphics[width=6cm]{acrylicoption.png}
-			\includegraphics[width=8cm,height=6cm]{4MeV_e+_PMT_first_hitTime_corrected.eps}
-			\figcaption{\label{fig2}   PMT's first hit time with TOF corrected 
+			\includegraphics[width=8cm,height=6cm]{4MeV_e+_PMT_first_hitTime_all.png}
+			\figcaption{\label{fig2}   PMT's first hit time with different situations 
 			}
 		\end{center}
 
 
 		The reconstructed positions are also validated by using the truth positions gotten from Monte Carlo (MC) truth information. 
-		The bias between reconstructed and truth event positions are drawn in Fig. 6, by using 14C events in LS. 
+		The bias between reconstructed and truth event positions are drawn in Fig.4, by using 14C events in LS. 
 
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
-			\includegraphics[width=7cm]{C14_deltaR.png}
+			\includegraphics[width=7cm]{C14_deltaR_new.png}
 			\figcaption{\label{fig2}   Delta of true C14 event vertex and reconstructed approximate event vertex}
 		\end{center}
 
-		The largest bias in Fig. 6 is smaller than the volume size, 5 meter, which means the volume can be 100\% correctly found.
+		The largest bias in Fig.4 is smaller than the volume size, 5 meter, which means the volume can be 100\% correctly found.
 		The resolution of reconstructed positions is about 1.55 meter, which agrees with expections.
 
 
@@ -402,16 +398,9 @@
 	\begin{multicols}{2}
 
 		Events rate caused by PMT dark noise coincidence is re-calculated with 50ns trigger time window, 
-		using the similar method discussed in previous sections. The calculated events rates are shown in Fig. ??.
+		using the similar method discussed in previous sections. The calculated events rates are shown in Fig.2 (the red line) .
 		Using the new trigger scheme, trigger threshold can be reduced to 0.2 MeV, and events rate from radioactivity is still under control.
 
-		\begin{center}
-			%\includegraphics[width=6cm]{acrylicoption.png}
-			\includegraphics[width=8cm,height=6cm]{Noise_rate_50kHz_50ns.eps}
-			\figcaption{\label{fig2}
-				Dark noise event rate when trigger integration time is 50ns
-			}
-		\end{center}
 
 		\section{Estimation of data volume in JUNO}
 		JUNO is proposed to run at least 6 years for neutrino mass hiarachy measurements and other physics topics. 
