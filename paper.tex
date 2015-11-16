@@ -19,7 +19,7 @@
 	%XXXXXX} \fancyfoot[C]{\small 010201-\thepage}
 	%\footnotetext[0]{Received XX XXXX 20XX}
 
-	\title{Estimation of event rate and data volume in JUNO\thanks{This work is supported by the Strategic Priority Research Program of the Chinese Academy of Sciences, Grant No. XDA10010900; the CAS Center for Excellence in Particle Physics (CCEPP); National Natural Science Foundation of China (NSFC); the Chinese Academy of Sciences (CAS) Large-Scale Scientific Facility Program; Joint Large-Scale Scientific Facility Funds of the NSFC and CAS under Contracts Nos. U1332201.} }
+	\title{Estimations of event rate and data volume for the JUNO experiment\thanks{This work is supported by the Strategic Priority Research Program of the Chinese Academy of Sciences, Grant No. XDA10010900; the CAS Center for Excellence in Particle Physics (CCEPP); National Natural Science Foundation of China (NSFC); the Chinese Academy of Sciences (CAS) Large-Scale Scientific Facility Program; Joint Large-Scale Scientific Facility Funds of the NSFC and CAS under Contracts Nos. U1332201.} }
 
 
 	\author{Fang Xiao(方肖)$^{1,2}$\email{fangx@ihep.ac.cn}
@@ -38,18 +38,18 @@
 
 	\begin{abstract}
 		The Jiangmen Underground Neutrino Observatory (JUNO) is an experiment proposed to determine
-		the neutrino mass hierarchy and probe the fundamental properties of neutrino oscillation. 
-		The JUNO central detector is a spherical liquid scintillator detector with 20 kton fiducial mass. 
-		The central detector's event rate is very important for JUNO online 
-		electronic and DAQ(Data Acquisition)
-		system design. It also help us to estimate the offline disk storage sapce for JUNO experiment data.
-		So we estimate the event rate of JUNO central detector by threory and Geant4 simulation. 
-		We consider many event source such
+		the neutrino mass hierarchy and probe the fundamental properties of the neutrino oscillation. 
+		The JUNO central detector (CD) is a spherical liquid scintillator detector with 20 kton fiducial mass. 
+		The CD's event rate is not only an important input to the design of online 
+		electronic and data acquisition
+		systems, but also helps to estimate the offline disk storage sapce required by the experiment.
+		So we estimate the event rate of JUNO central detector by analytic calculation and Geant4 simulation. 
+		We consider different event sources such
 		as IBD(inverse $\beta$-decay) events, cosmic muon events, the radioactity events from materials of
 		central detector, the radioactity events from water pool and rock, the PMT's dark noise events.
 		We also propose and do a simulation of a promising secondary trigger system which is intend to
 		suppress low energy 
-		radioactity background and dark noise. The estimated disk storage sapce for JUNO experiment data
+		radioactity background and dark noise. The estimated disk storage sapce for the JUNO experiment data
 		also be gived.
 
 	\end{abstract}
@@ -71,16 +71,16 @@
 	\begin{multicols}{2}
 
 		\section{Introduction}
-                The Jiangmen Underground Neutrino Observatory (JUNO) is located in Kaiping, Jiangmen, in Southern China.
+		JUNO\cite{lab1} is located in Kaiping, Jiangmen, in Southern China.
                 It's about 53 km away from Yangjiang and Taishan nuclear power plants, both of which are under construction.
-                The funding of JUNO has been approved in 2014 by China goverments, now it starts construction and expects to take data in 2020.
-		JUNO\cite{lab1} is a multipurpose neutrino experiment. It is
+                The experiment hall is now under construction and is expects to take data in 2020.
+		It is a multipurpose neutrino experiment and is
 		designed to determine neutrino mass hierarchy and precisely
 		measure oscillation parameters by detecting reactor
 		neutrinos from the Yangjiang and Taishan Nuclear Power
-		Plants. It also intended to observe supernova neutrinos,
-		study the atmospheric, solar neutrinos and geo-neutrinos,
-		and perform exotic searches, more details about physics motivation can be found in Ref.yellow book. 
+		Plants. It also intends to observe supernova neutrinos,
+		studies the atmospheric, solar neutrinos and geo-neutrinos,
+		and performs exotic searches.
 
                 Event rate and data volume of JUNO detector are essential inputs to design electronics and readout system, 
                 which are used to read signals out and save them to offline disks or tapes. 
@@ -89,7 +89,7 @@
                 In this paper, event rate from different signal sources have been estimated based on JUNO detector simulation, 
                 and the effects from different trigger schemes have been taken into account. Finally, the data volume is also reported.
 
-                This paper is organized as follow: JUNO detector is introduced in section 2; signal sources are analyzed in section 3.
+                This paper is organized as the follows: JUNO detector is introduced in section 2; signal sources are analyzed in section 3.
 
                 However, event rate heavily depends on trigger scheme used. In JUNO, two trigger schemes are proposed, one is based on 
                 JUNO detector consists of central detector and veto detector. 
@@ -97,24 +97,22 @@
                 The acrylic sphere is supported by a stainless struss, on which ~17,000 PMTs are mounted. The designed energy resolution of central detector is 3\% at 1 MeV.
                 The JUNO detector will be installed underground with 700 meter overburdern to suppress backgrounds from cosmic muons.
                 
-		Electronics, readout system and trigger are key components in JUNO.
-                The experiment hall is expected to be finished at 2019. 
-		It is possible to get data from the experiment at 2020.
-		The JUNO central detector's event rate is very important for 
-		JUNO experiment design. So we want to estimate JUNO
-		event rate by theory and Geant4 simulation. The
-		JUNO event rate is composed of signal rate and background
-		rate.With the estimated JUNO event rate,we can estimate the necessary
-		offline disk storage space for JUNO experiment data and help the 
-		online electronic and DAQ system design.
+		Electronics, readout system and trigger are three components in JUNO.
+		The JUNO CD's event rate is very important for 
+		the experiment design. So we want to estimate 
+		event rate by analytic calculation and Geant4 simulation. The
+		event rate is composed of signal rate and background
+		rate.With the estimated event rate,we can estimate the necessary
+		offline disk storage space for the experiment data and help the 
+		online electronic and data acquisition systems design.
 		
 		We also propose and do a simulation of a promising secondary trigger system which is intend to
 		reduce the event rate of low energy 
 		radioactity background and dark noise. 
 
-		In the beginning, for the central detector we proposed
+		At the beginning of the design stage, 
 		three design options: acrylic option, balloon option and 
-		module option. According to the Geant4 detector simulation,
+		module option, are proposed. According to the Geant4 detector simulation,
 		the module option was abandoned. Since the acrylic option
 		and balloon option are similar, we study the acrylic option
 		to estimate the event rate of JUNO central detector.
@@ -124,11 +122,11 @@
 
 
 		\section{JUNO detector}
-		The JUNO detector is composed of a central detector, a water
-		cherenkov detector and a muon tracker(shown in Fig.1). The 
+		The JUNO detector is composed of  Central Detector, Water
+		Cherenkov Detector and Top Tracker as shown in Fig.1. The 
 		central detector is made of 20k ton liquid scintillator contained in a 34.5 meter diameter acrylic sphere.
                 The acrylic sphere is supported by a stainless-steel truss, on which 17,000 PMTs are mounted to detect scintillation lights from LS. 
-		CD(Central Detector) will be installed in a water pool used to shield background of natural radioactivities from surrounding rock and environment. 
+		CD will be installed in a water pool used to shield background of natural radioactivities from surrounding rock and environment. 
                 The water pool is also a water cherenkov detector which can tag cosmic muons by detecting cherenkov lights. 
                 Water between PMT and acrylic sphere can also be used as a buffer to shield radioactivity background from PMTs and stainless-steel truss.
                 The thickness of the buffer is about 1.4 meter. On the top of CD, a muon tracker will be intalled to detect muons with better position and direction resolution.
@@ -160,21 +158,21 @@
 		%record the electronic output information as a event.
                 When particles deposit their energy in LS, LS can be excited and emits scintillation lights during deexcitation.
                 The amount of scintillation lights is proportional to the quenched deposited energy, in which quenching effects are considered.
-                Different particles have the different quenching factors. The scintillation lights and Cherenkov lights, if particle's velocity is larger than light velocity in LS, can be detected by PMTs in CD,
-                then converted to photo-electrons and PMT pulses after processing electronics system. Finally, if the amount of light is enough to fire a trigger, readout system will save PMT signals within a readout time window and form an event.
+                Different particles have the different quenching factors. Both scintillation lights and Cherenkov lights, if particle's velocity is larger than light velocity in LS, can be detected by PMTs in CD,
+                then converted to photo-electrons and PMT pulses by processing electronics system. Finally, if the amount of light is enough to trigger, readout system will save PMT signals within a readout time window and produce an event.
 
                 
 		The events detected by CD can be divided into physical events and background events. Physical events include all events that we are interested in, 
                 like reactor neutrino, solar neutrino, geo-neutrino, atmesphere neutrino, etc.
                 For each physical channel, the original event rate has been well 
-                estimated in JUNO yellow book. Combining its energy spectrum, 
+                estimated in the JUNO yellow book. Combining its energy spectrum, 
                 the event rates of each physics with different threshold of multiplicity trigger are summarized in table 1.
 
         \begin{center}
-                \tabcaption{ \label{tab1}  rates of different event source} 
+                \tabcaption{ \label{tab1}  Rates of different event sources} 
                 \footnotesize
                 \begin{tabular*}{80mm}{@{\extracolsep{\fill}} c c }
-			\toprule  event source&Rates  \\
+			\toprule  Event source&Rates  \\
                         \hline
                         IBD event               & 83 per day   \\
                         Li9/He8 $\beta$-n decay & 84 per day   \\
@@ -190,17 +188,17 @@
         \end{center}
 
                 
-                The solar neutrino is a major source to events rate of physical events, which can reach 0.45 Hz totally if no trigger threshold is applied, and is mainly from pp channel.
-                But, the energy of pp neutrino is quite low. If only a simple multiplicity trigger is chosen, the trigger threshold can not be lower than 0.5 MeV 
-                due to limitation of radioactivity background and coincidence of PMT dark noise. With 0.5 MeV threshold, most of pp neutrino will be discarded by trigger system, the solar neutrino events rate becomes 0.04 Hz.
+                The solar neutrino accounts for the major part of physical events, which can reach 0.45 Hz totally if no trigger threshold is applied, It is mainly from pp channel,
+                where the energy of pp neutrino is quite low. If only a simple multiplicity trigger is chosen, the trigger threshold can not be lower than 0.5 MeV 
+                due to limitation of radioactivity background and coincidence of PMT dark noise. With this threshold, most of pp neutrino will be removed, and the solar neutrino events rate is 0.04 Hz.
 
-                The total events rate from physical channel is less than 1 Hz, which is negligible comparing with that from radioactivity background.
-                However, if a supernova bursts at a typical distance of 10kpc, neutrino events rate has been estimated to be hundreds of Hz from different channels, 
-                and events rate is much higher in the first second during explosion. The supernova can sustain for about 10 seconds. 
-                In JUNO, all data in 10 seconds will be read out without trigger threshold. For a supernova with shorter distance, the higher events rate is expected. 
+                The total events rate from physical channel is less than 1 Hz, which is negligible comparing with those from radioactivity backgrounds.
+                However, if a supernova bursts at a typical distance of 10 kpc, neutrino events rate has been estimated to be hundreds of Hz from different channels, 
+                and events rate is much higher in the first second during the explosion. The supernova can last for about 10 seconds. 
+                In JUNO, all data within 10 seconds will be read out without trigger threshold. For a supernova with shorter distance, the higher events rate is expected. 
                 
                 
-                \section{Events rate of background events in CD}
+                \section{Event rates of background events in CD}
                 \subsection{Radioactivity background}
                 One of main contributions to event rate is natural radioactivity background, which comes from various sources, like $^{238}$U, $^{232}$Th ,$^{40}$K. 
                 They come from different materials in JUNO detector. In order to control the event rates of background, the purity of each material used to make detector is required by mass hierachy sensitivity.
