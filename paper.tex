@@ -389,7 +389,7 @@
 
 
 		To take the numbers in table 1 as the inputs of simulations, events rate from background are estimated again with new trigger scheme. 
-		The events rate from different radioactivity sources are summed up and the results are listed in table 2 with different trigger threshold and in
+		The events rate from different radioactivity sources are summed up and the results are listed in table 5 with different trigger threshold and in
 		different fiducial volumes.
 
 
@@ -431,41 +431,23 @@
 		JUNO is proposed to run at least 6 years for neutrino mass hiarachy measurements and other physics topics. 
 		It's important for offline data processing and disk storage preparation to estimate the data volume after 6 years running. 
 		Different events have different event size, depending on number of photo-electrons detected by CD.
-		Fig. ?? shows the PE numbers from different event sources, including radioactivity events and different physical events. 
+		The data volume of physical events excepting muon events and supernova events can be negligible comparing with radioactivity events. 
+		Fig.5  shows the fired PMT number distributions from different radioactivity events on each detector material.
+
+		\begin{center}
+			%\includegraphics[width=6cm]{acrylicoption.png}
+			\includegraphics[width=7cm]{distribution_of_fired_PMTNum.eps}
+			\figcaption{\label{fig2}   Distributions of fired PMT number on different materials}
+		\end{center}
 
 
+		With this distributions, we can estimate the data volume of different materials' radioactivity events. 
 
-	\end{multicols}
-	\begin{center}
-		\tabcaption{ \label{tab1} The DAQ data rate of central detector on different energy and radius threshold }
-		\footnotesize
-		\begin{tabular*}{170mm}{@{\extracolsep{\fill}} c c c c c c c}
-			\toprule  DAQ data rate(MBytes/s)&E$>$0.1MeV & E$>$0.2MeV & E$>$0.3MeV & E$>$0.4MeV & E$>$0.5MeV & E$>$0.6MeV \\
-			\hline
-			R$<$10m &400.598  &317.369  &315.246  &313.138  &311.188  &309.020  \\  
-			R$<$11m &424.110  &319.089  &316.580  &314.189  &312.013  &309.234  \\
-			R$<$12m &518.613  &325.933  &321.949  &318.466  &315.418  &310.087  \\
-			R$<$13m &621.595  &332.270  &326.988  &322.522  &318.662  &310.880  \\
-			R$<$14m &621.595  &332.270  &326.988  &322.522  &318.662  &310.880  \\
-			R$<$15m &703.853  &347.291  &337.170  &329.547  &323.657  &312.730  \\
-			R$<$16m &1049.85  &425.088  &388.524  &363.975  &347.654  &322.219  \\
-			R$<$17m &1219.60  &476.504  &421.716  &385.604  &362.360  &328.461  \\
-
-			\bottomrule
-		\end{tabular*}
-	\end{center}
-	\begin{multicols}{2}
-
-
-		If electronic system can't do waveform compression, we need do waveform compression in DAQ system and
-		then save the data to disk. With the waveform compression for low energy events, we can 
-		shorten the waveform  length from
-		1 $\mu$s to 50ns. So each low energy event contributes 0.1MBytes data, the estimated disk storage
-		space is listed in table.4.
+		In JUNO electronic system for low energy radioactivity events the assuming sampling time window is 1 $\mu$s. Each sampling point contribute 2 bytes data, so each low energy event contribute 2 MBytes data. The estimated data volume about radioactivity events of CD on different energy and radius threshold is listed in table 6.
 
 	\end{multicols}
 	\begin{center}
-		\tabcaption{ \label{tab1} The disk storage space of central detector on different energy and radius threshold }
+		\tabcaption{ \label{tab1} The data volume of central detector radioactivity events on different energy and radius threshold }
 		\footnotesize
 		\begin{tabular*}{170mm}{@{\extracolsep{\fill}} c c c c c c c}
 			\toprule  disk storage space(MBytes/s)&E$>$0.1MeV & E$>$0.2MeV & E$>$0.3MeV & E$>$0.4MeV & E$>$0.5MeV & E$>$0.6MeV \\
@@ -484,10 +466,32 @@
 	\end{center}
 	\begin{multicols}{2}
 
-
+		For the high energy muon events and supernova events, all the PMTs will be fired. We assume
+		the total PMT number of CD is about 18000, so each muon and supernova event contribute 36 MBytes.
+		The event rate of muon is about 3Hz, so the data volume of muon events is about 100MBytes/s .
+		  
 
 
 		\section{Conclusion}
+		The total events rate from physical channel excepting supernova event in JUNO is less 
+		than 1 Hz. So the data volume of physical events excepting supernova event is negligible 
+		comparing with those from radioactity backgrounds. With
+		a typical energy threshold 0.5MeV , the data volume of radioactity
+		backgrounds is about ??? MBytes/s. The data volume of muon events is about 100MBytes/s.
+
+		With a more sophisticated trigger scheme, the energy threshold can be reduced to 0.2MeV which 
+		is preferred by solar neutrinos and supernova neutrinos study. With 0.2MeV energy threshold and
+		17m radius threshold the data volume of radioactity backgrounds is about ??? MBytes/s. Table.6
+		show the data volume of central detector radioactivity events on different energy and radius 
+		threshold.
+
+		The rescults of the present study provide important event rates estimation and trigger scheme 
+		for JUNO design and disk storage preparation. 
+
+
+
+
+
 		\vspace{-1mm}
 		\centerline{\rule{80mm}{0.1pt}}
 		\vspace{2mm}

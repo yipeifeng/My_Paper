@@ -6,7 +6,7 @@
 ::epstopdf --outfile=4MeV_e+_PMT_first_hitTime_all-eps-converted-to.pdf 4MeV_e+_PMT_first_hitTime_all.eps 
 ::
 ::epstopdf --outfile=Rate_all-eps-converted-to.pdf Rate_all.eps
-epstopdf --outfile=C14_deltaR_new-eps-converted-to.pdf C14_deltaR_new.eps 
+epstopdf --outfile=distribution_of_fired_PMTNum-eps-converted-to.pdf distribution_of_fired_PMTNum.eps 
 
 
 
