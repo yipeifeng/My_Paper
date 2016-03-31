@@ -432,18 +432,18 @@
 		It's important for offline data processing and disk storage preparation to estimate the data volume after 6 years running. 
 		Different events have different event size, depending on number of photo-electrons detected by CD.
 		The data volume of physical events excepting muon events and supernova events can be negligible comparing with radioactivity events. 
-		Fig.5  shows the fired PMT number distributions from different radioactivity events on each detector material.
+		Fig.5  shows the fired PMT number distributions from different radioactivity events on each detector material with 300ns trigger time window.
 
 		\begin{center}
 			%\includegraphics[width=6cm]{acrylicoption.png}
 			\includegraphics[width=7cm]{distribution_of_fired_PMTNum.eps}
-			\figcaption{\label{fig2}   Distributions of fired PMT number on different materials}
+			\figcaption{\label{fig2}   Distributions of fired PMT number on different materials with 300ns trigger time window}
 		\end{center}
 
 
 		With this distributions, we can estimate the data volume of different materials' radioactivity events. 
 
-		In JUNO electronic system for low energy radioactivity events the assuming sampling time window is 1 $\mu$s. Each sampling point contribute 2 bytes data, so each low energy event contribute 2 MBytes data. The estimated data volume about radioactivity events of CD on different energy and radius threshold is listed in table 6.
+		In JUNO electronic system for low energy radioactivity events the assuming sampling time window is 1 $\mu$s. Each sampling point contribute 2 bytes data, so each fired PMT contribute 2 KBytes data. The estimated data volume about radioactivity events of CD on different energy and radius threshold is listed in table 6.
 
 	\end{multicols}
 	\begin{center}
@@ -452,14 +452,15 @@
 		\begin{tabular*}{170mm}{@{\extracolsep{\fill}} c c c c c c c}
 			\toprule  disk storage space(MBytes/s)&E$>$0.1MeV & E$>$0.2MeV & E$>$0.3MeV & E$>$0.4MeV & E$>$0.5MeV & E$>$0.6MeV \\
 			\hline
-			R$<$10m  &122.630  &118.468  &118.362  &118.257  &118.159  &118.051 \\  
-			R$<$11m  &123.806  &118.554  &118.429  &118.309  &118.201  &118.062 \\
-			R$<$12m  &128.531  &118.897  &118.697  &118.523  &118.371  &118.104 \\
-			R$<$13m  &133.680  &119.213  &118.949  &118.726  &118.533  &118.144 \\
-			R$<$14m  &133.680  &119.213  &118.949  &118.726  &118.533  &118.144 \\
-			R$<$15m  &137.793  &119.965  &119.459  &119.077  &118.783  &118.236 \\
-			R$<$16m  &155.092  &123.854  &122.026  &120.799  &119.983  &118.711 \\
-			R$<$17m  &163.580  &126.425  &123.686  &121.880  &120.718  &119.023 \\
+
+			R$<$10m  &439.131   &141.307  &127.054  &125.725  &123.941  &122.329 \\  
+			R$<$11m  &508.392   &143.338  &128.081  &126.514  &124.518  &122.521 \\
+			R$<$12m  &786.779   &151.416  &132.214  &129.729  &126.891  &123.280 \\
+			R$<$13m  &1090.13   &158.894  &136.093  &132.778  &129.154  &123.988 \\
+			R$<$14m  &1090.13   &158.894  &136.093  &132.778  &129.154  &123.988 \\
+			R$<$15m  &1332.45   &176.623  &143.929  &138.059  &132.638  &125.636 \\
+			R$<$16m  &2351.66   &268.445  &183.459  &163.936  &149.375  &134.092 \\
+			R$<$17m  &2851.79   &329.130  &209.007  &180.195  &159.631  &139.657 \\
 
 			\bottomrule
 		\end{tabular*}
@@ -477,11 +478,11 @@
 		than 1 Hz. So the data volume of physical events excepting supernova event is negligible 
 		comparing with those from radioactity backgrounds. With
 		a typical energy threshold 0.5MeV , the data volume of radioactity
-		backgrounds is about ??? MBytes/s. The data volume of muon events is about 100MBytes/s.
+		backgrounds is about 210 MBytes/s. The data volume of muon events is about 100MBytes/s.
 
 		With a more sophisticated trigger scheme, the energy threshold can be reduced to 0.2MeV which 
 		is preferred by solar neutrinos and supernova neutrinos study. With 0.2MeV energy threshold and
-		17m radius threshold the data volume of radioactity backgrounds is about ??? MBytes/s. Table.6
+		17m radius threshold the data volume of radioactity backgrounds is about 329 MBytes/s. Table.6
 		show the data volume of central detector radioactivity events on different energy and radius 
 		threshold.
 
